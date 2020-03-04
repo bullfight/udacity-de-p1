@@ -68,3 +68,73 @@ SELECT location, count(*) as count
   ORDER BY count desc
   LIMIT 5;
 ```
+
+## Tables
+
+A sample selection of tables available in the Sparify Database:
+
+*songplays*
+
+```
+sparkifydb=# select * from songplays limit 5;
+ songplay_id |       start_time        | user_id | song_id | artist_id | session_id |          location           |                                                   user_agent
+-------------+-------------------------+---------+---------+-----------+------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------
+           1 | 2018-11-01 21:01:46.796 |       8 |         |           |        139 | Phoenix-Mesa-Scottsdale, AZ | "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+           2 | 2018-11-01 21:05:52.796 |       8 |         |           |        139 | Phoenix-Mesa-Scottsdale, AZ | "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+           3 | 2018-11-01 21:08:16.796 |       8 |         |           |        139 | Phoenix-Mesa-Scottsdale, AZ | "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+           4 | 2018-11-01 21:11:13.796 |       8 |         |           |        139 | Phoenix-Mesa-Scottsdale, AZ | "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+           5 | 2018-11-01 21:17:33.796 |       8 |         |           |        139 | Phoenix-Mesa-Scottsdale, AZ | "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
+```
+
+*users*
+
+```
+sparkifydb=# select * from users limit 5;
+ user_id | first_name | last_name | gender | level
+---------+------------+-----------+--------+-------
+     100 | Adler      | Barrera   | M      | free
+      53 | Celeste    | Williams  | F      | free
+      69 | Anabelle   | Simpson   | F      | free
+       8 | Kaylee     | Summers   | F      | free
+      62 | Connar     | Moreno    | M      | free
+```
+
+*artists*
+
+```
+sparkifydb=# select * from artists limit 5;
+     artist_id      |         name          |          location           | latitude | longitude
+--------------------+-----------------------+-----------------------------+----------+-----------
+ AR7G5I41187FB4CE6C | Adam Ant              | London, England             |          |
+ AR8ZCNI1187B9A069B | Planet P Project      |                             |          |
+ ARXR32B1187FB57099 | Gob                   |                             |          |
+ AR10USD1187B99F3F1 | Tweeterfriendly Music | Burlington, Ontario, Canada |          |
+ ARGSJW91187B9B1D6B | JennyAnyKind          | North Carolina              | 35.21962 | -80.01955
+```
+
+*songs*
+
+```
+sparkifydb=# select * from songs limit 5;
+      song_id       |     artist_id      |      title      | year | duration
+--------------------+--------------------+-----------------+------+-----------
+ SONHOTT12A8C13493C | AR7G5I41187FB4CE6C | Something Girls | 1982 | 233.40363
+ SOIAZJW12AB01853F1 | AR8ZCNI1187B9A069B | Pink World      | 1984 | 269.81832
+ SOFSOCN12A8C143F5D | ARXR32B1187FB57099 | Face the Ashes  | 2007 | 209.60608
+ SOHKNRJ12A6701D1F8 | AR10USD1187B99F3F1 | Drop of Rain    | 0    | 189.57016
+ SOQHXMF12AB0182363 | ARGSJW91187B9B1D6B | Young Boy Blues | 0    | 218.77506
+```
+
+*times*
+
+```
+sparkifydb=# select * from times limit 5;
+       start_time        | hour | day | week | month | year | weekday
+-------------------------+------+-----+------+-------+------+---------
+ 2018-11-01 21:01:46.796 |   21 |   1 |   44 |    11 | 2018 |       3
+ 2018-11-01 21:05:52.796 |   21 |   1 |   44 |    11 | 2018 |       3
+ 2018-11-01 21:08:16.796 |   21 |   1 |   44 |    11 | 2018 |       3
+ 2018-11-01 21:11:13.796 |   21 |   1 |   44 |    11 | 2018 |       3
+ 2018-11-01 21:17:33.796 |   21 |   1 |   44 |    11 | 2018 |       3
+```
+
