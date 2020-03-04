@@ -5,7 +5,7 @@
 Sparkify a music streaming startup is seeking to analyze songplays by users of a
 new application. The app generates two artifacts:
 
-*Song Data*
+**Song Data**
 
 The Song Data files include JSON Metadata about songs available for streaming in the app.
 
@@ -25,7 +25,7 @@ Example Song Data:
 }
 ```
 
-*Log Data*
+**Log Data**
 
 Newline delimited JSON logs of user songplays.
 
@@ -55,7 +55,7 @@ Build the following dimension tables to provide easy access to details about son
 Build a `songplays` fact table against which example analytical questions around
 songplays are quickly and easily queried.
 
-# Building Sparkify Database
+## Building Sparkify Database
 
 The Sparkify Database with associated tables is built using the following files
 
