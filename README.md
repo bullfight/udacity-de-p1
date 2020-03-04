@@ -75,7 +75,7 @@ A sample selection of tables available in the Sparify Database:
 
 *songplays*
 
-```
+```sql
 sparkifydb=# select * from songplays limit 5;
  songplay_id |       start_time        | user_id | song_id | artist_id | session_id |          location           |                                                   user_agent
 -------------+-------------------------+---------+---------+-----------+------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ sparkifydb=# select * from songplays limit 5;
 
 *users*
 
-```
+```sql
 sparkifydb=# select * from users limit 5;
  user_id | first_name | last_name | gender | level
 ---------+------------+-----------+--------+-------
@@ -101,7 +101,7 @@ sparkifydb=# select * from users limit 5;
 
 *artists*
 
-```
+```sql
 sparkifydb=# select * from artists limit 5;
      artist_id      |         name          |          location           | latitude | longitude
 --------------------+-----------------------+-----------------------------+----------+-----------
@@ -114,7 +114,7 @@ sparkifydb=# select * from artists limit 5;
 
 *songs*
 
-```
+```sql
 sparkifydb=# select * from songs limit 5;
       song_id       |     artist_id      |      title      | year | duration
 --------------------+--------------------+-----------------+------+-----------
@@ -127,7 +127,7 @@ sparkifydb=# select * from songs limit 5;
 
 *times*
 
-```
+```sql
 sparkifydb=# select * from times limit 5;
        start_time        | hour | day | week | month | year | weekday
 -------------------------+------+-----+------+-------+------+---------
