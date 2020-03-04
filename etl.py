@@ -45,7 +45,9 @@ def process_log_file(cur, filepath):
 
     # insert user records
     for i, row in user_df.iterrows():
-        cur.execute(user_table_insert, row)
+        user_labels = ('user_id', 'first_name', 'last_name', 'gender', 'level')
+        user_dict = dict(zip(user_labels, row))
+        cur.execute(user_table_insert, user_dict)
 
     # insert songplay records
     for index, row in df.iterrows():
