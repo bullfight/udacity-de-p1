@@ -56,7 +56,7 @@ artist_table_create = ("""
 time_table_create = ("""
   CREATE TABLE IF NOT EXISTS times
   (
-    start_time timestamp,
+    start_time timestamp PRIMARY KEY,
     hour       integer,
     day        integer,
     week       integer,
@@ -91,6 +91,7 @@ artist_table_insert = ("""
 
 time_table_insert = ("""
     INSERT INTO times (start_time, hour, day, week, month, year, weekday) VALUES (%s, %s, %s, %s, %s, %s, %s)
+    ON CONFLICT (start_time) DO NOTHING
 """)
 
 # Find sonds by title, name, and duration, return song_id and artist_id
