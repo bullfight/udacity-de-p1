@@ -5,8 +5,6 @@
 Sparkify a music streaming startup is seeking to analyze songplays by users of a
 new application. The app generates two artifacts:
 
-* Song Data - JSON Metadata about songs available for streaming in the app
-* Log Data - JSON logs of user songplays
 *Song Data*
 
 The Song Data files include JSON Metadata about songs available for streaming in the app.
@@ -59,7 +57,13 @@ songplays are quickly and easily queried.
 
 # Building Sparkify Database
 
-The Sparkify Database with associated tables is built by executing the following scripts
+The Sparkify Database with associated tables is built using the following files
+
+* `create_tables.py` - A script with a set of functions responsible for creating the Sparkify database. Execuring this script will drop and recreate tables if they already exist.
+* `sql_queries.py` - A set of named sql queries used for droping tables, creating tables, and inserting new data into tables. This is imported into `etl.py`.
+* `etl.py` - A script that is responsible for extracting, transforming and loading data into the Sparkify database.
+
+Execute the following commands in the commandline to create and load the database:
 
 ```
 python create_tables.py
@@ -69,6 +73,7 @@ python etl.py
 ## Example Queries
 
 *How many songs were streamed on each of the past 5 days?*
+
 ```sql
 SELECT DATE(songplays.start_time) as date, count(*) as counts
   FROM songplays
@@ -78,6 +83,7 @@ SELECT DATE(songplays.start_time) as date, count(*) as counts
 ```
 
 *Who are the most active paid, users in the past 5 days?*
+
 ```sql
 SELECT songplays.user_id, count(*) as count
   FROM songplays
@@ -91,6 +97,7 @@ SELECT songplays.user_id, count(*) as count
 ```
 
 *What metro region has the most active users?*
+
 ```sql
 SELECT location, count(*) as count
   FROM songplays
