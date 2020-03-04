@@ -9,7 +9,7 @@ def process_song_file(cur, filepath):
     """Process song_data and load songs and artists tables"""
 
     # open song file
-    df = pd.read_json(filepath, typ='series')
+    df = pd.read_json(filepath, typ='series', convert_dates=False)
 
     # insert song record
     song_data = df.loc[['song_id', 'artist_id', 'title', 'year', 'duration']].values.tolist()
