@@ -27,6 +27,14 @@ Build the following dimension tables to provide easy access to details about son
 Build a `songplays` fact table against which example analytical questions around
 songplays are quickly and easily queried.
 
+# Building Sparkify Database
+
+The Sparkify Database with associated tables is built by executing the following scripts
+
+```
+python create_tables.py
+python etl.py
+```
 
 ## Example Queries
 
