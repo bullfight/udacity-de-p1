@@ -4,9 +4,13 @@ import psycopg2
 import pandas as pd
 from sql_queries import *
 
-
 def process_song_file(cur, filepath):
-    """Process song_data and load songs and artists tables"""
+    """Process song_data and load songs and artists tables
+
+    Arguments:
+    cur -- The database cursor (psycopg2.extensions.cursor)
+    filepath - The filepath to be read (str)
+    """
 
     # open song file
     df = pd.read_json(filepath, typ='series', convert_dates=False)
@@ -21,7 +25,12 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
-    """Process log_data and Load times, users and songplays tables"""
+    """Process log_data and Load times, users and songplays tables
+
+    Arguments:
+    cur -- The database cursor (psycopg2.extensions.cursor)
+    filepath - The filepath to be read (str)
+    """
 
     # open log file
     df = pd.read_json(filepath, lines=True)
@@ -67,7 +76,14 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
-    """Iterate over each file in a filepath add pass the file to a function"""
+    """Iterate over each file in a filepath add pass the file to a function
+
+    Arguments:
+    cur -- The database cursor (psycopg2.extensions.cursor)
+    conn -- The database connection (psycopg2.extensions.connection)
+    filepath - The filepath to be read (str)
+    func - The function to be applied to the given filepath
+    """
 
     # get all files matching extension from directory
     all_files = []
